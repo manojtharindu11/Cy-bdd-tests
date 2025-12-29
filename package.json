@@ -1,0 +1,17 @@
+{
+  "name": "cy-bdd-tests",
+  "version": "1.0.0",
+  "description": "Cypress with Cucumber example",
+  "keywords": [
+    "Cypress",
+    "BDD",
+    "Cucumber"
+  ],
+  "license": "ISC",
+  "author": "Manoj Thilakarathna",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
