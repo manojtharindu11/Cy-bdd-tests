@@ -1,7 +1,14 @@
 const { defineConfig } = require('cypress')
 const createBundler = require('@bahmutov/cypress-esbuild-preprocessor')
-const { addCucumberPreprocessorPlugin } = require('@badeball/cypress-cucumber-preprocessor')
-const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor/esbuild')
+const {
+	addCucumberPreprocessorPlugin,
+} = require('@badeball/cypress-cucumber-preprocessor')
+const {
+	createEsbuildPlugin,
+} = require('@badeball/cypress-cucumber-preprocessor/esbuild')
+const {
+	configureAllureAdapterPlugins,
+} = require('@mmisty/cypress-allure-adapter/plugins')
 
 module.exports = defineConfig({
 	video: false,
@@ -17,6 +24,10 @@ module.exports = defineConfig({
 			on('file:preprocessor', bundler)
 			await addCucumberPreprocessorPlugin(on, config)
 			return config
+		},
+		env: {
+			allure: true,
+			allureResultsPath: 'allure-results',
 		},
 	},
 })
