@@ -15,11 +15,8 @@
     "cy:open": "cypress open",
     "cy:tests": "cypress run"
   },
-  "dependencies": {
-    "cypress": "^15.8.1",
-    "cypress-cucumber-preprocessor": "^4.3.1"
-  },
   "devDependencies": {
+    "cypress": "^13.17.0",
     "@badeball/cypress-cucumber-preprocessor": "^24.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
     "@mmisty/cypress-allure-adapter": "^4.0.1",
@@ -27,8 +24,6 @@
     "prettier": "^3.7.4"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": [
-      "cypress/e2e/step_definitions/**/*.js"
-    ]
+    "stepDefinitions": "cypress/e2e/**/*.{js,ts}"
   }
 }
