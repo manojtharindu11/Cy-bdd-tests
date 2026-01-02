@@ -23,6 +23,7 @@ module.exports = defineConfig({
 			})
 			on('file:preprocessor', bundler)
 			await addCucumberPreprocessorPlugin(on, config)
+			await configureAllureAdapterPlugins(on, config)
 			return config
 		},
 		env: {
