@@ -405,3 +405,6 @@ system-tests/lib/validations
 !.cursor/BUGBOT.md
 
 node_modules/
+
+allure-report
+allure-results
