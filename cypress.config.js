@@ -11,14 +11,10 @@ module.exports = defineConfig({
 	video: false,
 	defaultCommandTimeout: 5000,
 	pageLoadTimeout: 10000,
-	reporter: 'mochawesome',
+	reporter: 'mocha-allure-reporter',
 	reporterOptions: {
-		reportDir: 'cypress/reports/mochawesome',
-		reportName: 'report',
-		overwrite: true,
-		html: true,
-		json: true,
-		timestamp: 'yyyy-mm-dd_HH-MM-ss',
+		resultsDir: 'allure-results',
+		clean: true,
 	},
 	e2e: {
 		specPattern: 'cypress/e2e/**/*.feature',
