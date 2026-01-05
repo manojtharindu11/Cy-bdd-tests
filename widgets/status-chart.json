@@ -1,0 +1,1 @@
+[{"uid":"3818b42fce2da5ed","name":"Login with multiple users (example #1)","time":{"start":1767600961778,"stop":1767600965217,"duration":3439},"status":"passed","severity":"normal"},{"uid":"aac2175a41555d45","name":"Login with multiple users (example #2)","time":{"start":1767600965232,"stop":1767600975494,"duration":10262},"status":"broken","severity":"normal"}]
