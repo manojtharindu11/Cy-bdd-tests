@@ -408,3 +408,5 @@ node_modules/
 
 allure-report
 allure-results
+
+cypress/reports
