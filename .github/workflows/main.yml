@@ -24,28 +24,32 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Install Allure
+      - name: Install Allure Command Line
         run: npm install -g allure-commandline
 
       - name: Run Cypress Tests
-        # We use 'continue-on-error: true' so the report still generates if tests fail
         continue-on-error: true
-        run: npx cypress run --env allure=true
+        run: npm run cy:tests
 
       - name: Generate Allure Report
         if: always()
-        run: allure generate allure-results --clean -o allure-report
+        run: npm run allure:report
 
-      - name: Copy History
+      - name: Upload Allure Report as Artifact
         if: always()
-        run: |
-          mkdir -p allure-history
-          if [ -d allure-report/history ]; then
-            cp -r allure-report/history/* allure-history/ || true
-          fi
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report/
+          retention-days: 30
+
+      - name: Upload Test Screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots/
+          retention-days: 30
 
       - name: Deploy Report to GitHub Pages
         if: always()
