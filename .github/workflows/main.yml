@@ -46,7 +46,13 @@ jobs:
         shell: bash
         run: |
           mkdir -p cypress/reports/html
-          find cypress/reports/final -name "*.html" -type f | head -1 | xargs -I {} cp {} cypress/reports/html/index.html || true
+          cp -r cypress/reports/final/cypress/reports/final/* cypress/reports/html/ || true
+          cp -r cypress/reports/final/assets cypress/reports/html/ || true
+          # Rename mochawesome.html to index.html for GitHub Pages
+          mv cypress/reports/html/mochawesome.html cypress/reports/html/index.html || true
+          # Fix backslash paths to forward slashes for GitHub Pages compatibility
+          sed -i 's|\\|/|g' cypress/reports/html/index.html || true
+          ls -la cypress/reports/html/
 
       - name: Upload Test Report
         if: always()
