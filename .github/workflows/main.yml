@@ -43,9 +43,10 @@ jobs:
 
       - name: Copy HTML Report to Root
         if: always()
+        shell: bash
         run: |
           mkdir -p cypress/reports/html
-          find cypress/reports/final -name "*.html" -type f -exec cp {} cypress/reports/html/index.html \; || true
+          find cypress/reports/final -name "*.html" -type f | head -1 | xargs -I {} cp {} cypress/reports/html/index.html || true
 
       - name: Upload Test Report
         if: always()
