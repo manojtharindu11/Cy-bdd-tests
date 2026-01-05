@@ -20,15 +20,9 @@
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^24.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
-    "@mmisty/cypress-allure-adapter": "^4.0.1",
     "allure-commandline": "^2.36.0",
-    "allure-cypress": "^3.4.3",
-    "allure-mocha": "^3.4.3",
     "cypress": "^13.17.0",
     "mocha-allure-reporter": "^1.4.0",
-    "mochawesome": "^7.1.4",
-    "mochawesome-merge": "^5.1.0",
-    "mochawesome-report-generator": "^6.3.2",
     "prettier": "^3.7.4"
   },
   "cypress-cucumber-preprocessor": {
